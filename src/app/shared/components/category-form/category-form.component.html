@@ -1,0 +1,12 @@
+<form class="mt-3 col-md-8 offset-md-2" (ngSubmit)="onSave()" [formGroup]="categoryForm">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" placeholder="Name" formControlName="name" [class]="isValidField('name')">
+            <div class="invalid-feedback">
+                <span *ngIf="categoryForm.get('name').errors?.required">This field is required</span>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn bg-dark btn-block text-light">Save</button>
+</form>
+<button type="submit" class="btn btn-secondary mt-2 btn-sm" (click)="onGoToBackList()">Go Back</button>

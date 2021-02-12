@@ -1,0 +1,22 @@
+<table class="table mt-5">
+    <table class="table table-hover ">
+        <thead>
+            <tr class="text-center">
+                <th scope="col">Name</th>
+                <th class="d-none d-sm-block" scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" *ngFor="let item of categories$ | async">
+                <td scope="row">{{item.name}}</td>
+                <td class="btn-group d-none d-sm-block" role="group">
+                    <button type="button" class="btn btn-outline-primary m-1" (click)="onGoToEdit(item)">Edit</button>
+                    <button type="button" class="btn btn-outline-warning m-1" (click)="onGoToSee(item)">See
+                        more</button>
+                    <button type="button" class="btn btn-outline-danger m-1" (click)="onGoToDelete(item.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</table>
+<button type="button" class="btn btn-secondary mt-2 btn-sm" (click)="onGoBackToList()">Go back</button>

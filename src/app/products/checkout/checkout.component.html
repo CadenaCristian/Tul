@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-12 mt-5">
+        <div class="card text-dark bg-light mt-3 col-md-6 offset-3">
+            <div class="card-header mt-2 text-center">Products</div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">Name product</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center" *ngFor="let item of list">
+                            <td>{{item.name}}</td>
+                            <td>{{item.category}}</td>
+                            <td>${{item.price}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-lg btn-primary btn-block">Go to pay ${{total}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<button type="submit" class="btn btn-secondary mt-2 btn-sm" (click)="onGoToBackList()">Go Back</button>
