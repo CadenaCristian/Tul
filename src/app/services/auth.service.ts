@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { first } from 'rxjs/operators'
-import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase";
 import { AngularFireAuth } from '@angular/fire/auth';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +19,14 @@ export class AuthService {
       );
       return result;
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        title: 'Error',
+        icon: 'error',
+        text: error.message,
+        showCancelButton: false,
+        showConfirmButton: false,
+        timer: 10000
+      })
     }
 
   }
@@ -32,7 +38,14 @@ export class AuthService {
       );
       return result; 
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        title: 'Error',
+        icon: 'error',
+        text: error.message,
+        showCancelButton: false,
+        showConfirmButton: false,
+        timer: 10000
+      })
     }
   }
   async logout() {
